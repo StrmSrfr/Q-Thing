@@ -6,6 +6,7 @@ TEMPLATE = app
 TARGET = Q-Game
 DEPENDPATH += .
 INCLUDEPATH += .
+CONFIG += object_parallel_to_source
 
 # Output
 DESTDIR = build
@@ -27,7 +28,10 @@ RESOURCES += \
     q-game.qrc
 
 OTHER_FILES += \
-    Resources/fragmentShader.fs \
-    Resources/vertexShader.vs
+    Resources/Shaders/ColorPassthrough/fragmentShader.fs \
+    Resources/Shaders/ColorPassthrough/vertexShader.vs \
+    Resources/Shaders/WireframeSolid/fragmentShader.fs \
+    Resources/Shaders/WireframeSolid/geometry.gs \
+    Resources/Shaders/WireframeSolid/vertexShader.vs
 
 QMAKE_CXXFLAGS += -DGL_GLEXT_PROTOTYPES
